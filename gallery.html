@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Nutritional Webiste: Gallery Page</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <h1>Nutritional Website</h1>
+        
+        <div id="social">
+            <a href="https://facebook.com">
+                <img src="images/facebook.jpg" alt="facebook">
+            </a>
+            <a href="https://www.x.com">
+               <img src="images/x.jpg" alt="x/twitter" >
+        </a>   
+        <a href="https://www.linkedin.com">
+            <img src="images/linkedin.jpg" alt="linkedin">
+        </a>
+  </div>
+  </div>
+    
+<div id="nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eatinghabits.html">Eating Habits</a></li>
+        <li><a href="exercise.html">Exercise</a></li>
+        <li><a class="active" href="gallery.html">Gallery</a></li>
+        <li><a href="sleepinghabits.html">Sleeping Habits</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</div>
+
+<div id="content">
+     <div id="title">
+        <h2>Gallery</h2>
+     </div>
+      <div id="container">
+            <div id="image">
+                <img id="img" src="images/Bean2sleep.jpg" alt="">
+            </div>
+
+      <div id="controls">
+                <button onclick="GoBack()">Back</button>
+                <button onclick="GoNext()">Next</button>
+            </div>
+
+            <script>
+            var num = 1;
+            var element = document.getElementById("img");
+            function GoBack()
+            {
+                if(num > 1)
+                {
+                    num--;
+                }
+                else
+                {
+                    num = 6;
+                }
+                PlayAnimation();
+            }
+            function GoNext()
+            {
+                if(num < 6)
+                {
+                    num++;
+                }
+                else
+                {
+                    num = 1;
+                }
+                PlayAnimation();
+            }
+            function PlayAnimation()
+            {
+                element.src = "images/"+num+".jpg";
+                element.classList.remove("play"); // reset the animation
+                void element.offsetWidth; // trigger the reflow of img tag
+                element.classList.add("play");
+            }
+        </script>
+   
+</div>   
+</div>
+
+<div id="footer">
+  <a href="index.html">Home</a> | <a href="eatinghabits.html">Eating Habits</a> | <a href="exercise.html">Exercise</a> | <a href="gallery.html">Gallery</a> | <a href="sleepinghabits.html">Sleeping Habits</a> | <a href="contact.html">Contact Us</a>
+    </div>
+</body>
+
+
+
+</html>
